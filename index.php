@@ -1,10 +1,39 @@
 <?php
 
+// Inclusion des paramètres généraux de configuration
+require_once ('./config/config.php');
+// 1. On active l'affichage des erreurs à l'écran
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+
+// 2. On définit le niveau d'erreur (E_ALL pour tout voir, même les petits avertissements)
+// error_reporting(E_ALL);
+
+// 3. On garde quand même l'écriture dans le fichier log
+// ini_set('log_errors', 'On');
+// ini_set('error_log', __DIR__ . '/logs/php_errors.log');
+
+// Inclusion des paramètres de connexion à la DB
+require_once ('./config/mysql.php');
+
+// Inclusion des paramètres et de la fonction de connexion à la DB
+require_once 'db.php';
+
 // Inclusion de l'entête de chaque page du site
 include 'header.php';
 
 // Inclusion des données sur les oeuvres a présenter sur le site
-include 'oeuvres.php';
+// include 'oeuvres.php';
+
+// connexion à la DB
+$pdo = dbconnect($user,$pass,$host,$port,$db,$charset);
+
+// Récupération de la liste des oeuvres
+$query = $pdo->query("SELECT id, titre,artiste, description, image FROM oeuvres");
+$oeuvres = $query->fetchAll();
+
+
+
 
 // Affichage des oeuvres 
 echo "<div id=\"liste-oeuvres\">";
