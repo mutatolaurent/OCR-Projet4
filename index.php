@@ -3,9 +3,6 @@
 // Inclusion des paramètres généraux de configuration
 require_once ('./config/config.php');
 
-// Inclusion des paramètres de connexion à la DB
-//require_once ('./config/mysql.php');
-
 // Inclusion des paramètres et de la fonction de connexion à la DB
 require_once 'db.php';
 
