@@ -1,4 +1,8 @@
-CREATE TABLE `artbox`.`oeuvres` 
+CREATE DATABASE IF NOT EXISTS artbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE artbox;
+
+CREATE TABLE IF NOT EXISTS `artbox`.`oeuvres` 
 (
     `id` INT NOT NULL AUTO_INCREMENT COMMENT 'Identifiant unique de l\'oeuvre' , 
     `titre` VARCHAR(256) NOT NULL COMMENT 'Titre de l\'oeuvre' , 

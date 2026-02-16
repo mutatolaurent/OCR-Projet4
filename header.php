@@ -16,6 +16,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
+                <li><a href="ajouter.php">Ajouter une oeuvre</a></li>
             </ul>
         </nav>
     </header>

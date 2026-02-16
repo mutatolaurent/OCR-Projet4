@@ -132,6 +132,17 @@ input[type="submit"] {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   padding: 7px;
+  cursor: pointer;
+}
+
+.erreur-texte {
+  color: #d9534f;
+  /* display: block; */
+  /* margin-bottom: 10px; */
+}
+
+.input-erreur {
+  border: 2px solid #d9534f;
 }
 
 @media (max-width: 850px) {

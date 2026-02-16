@@ -22,8 +22,6 @@ $query = $pdo->query("SELECT id, titre,artiste, description, image FROM oeuvres"
 $oeuvres = $query->fetchAll();
 
 
-
-
 // Affichage des oeuvres 
 echo "<div id=\"liste-oeuvres\">";
 
