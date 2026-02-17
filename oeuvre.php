@@ -39,22 +39,37 @@ if ($id === false || $id <= 0) {
 // connexion à la DB
 $pdo = dbconnect($dbConfig);
 
-// Récupération en DB des informations sur l'oeuvre grâce à son ID
-$stmt = $pdo->prepare("SELECT id, titre, artiste, description, image FROM oeuvres WHERE id = :id");
-$stmt->execute(['id' => $id]);
-$oeuvreTrouvee = $stmt->fetch();
+try {
 
-// Si L'ID est un entier valide, mais qu'il n'existe pas en base de données, on trace l'erreur et on revient à la page d'accueil
-if (!$oeuvreTrouvee) {
+    // Récupération en DB des informations sur l'oeuvre grâce à son ID
+    $stmt = $pdo->prepare("SELECT id, titre, artiste, description, image FROM oeuvres WHERE id = :id");
+    $stmt->execute(['id' => $id]);
+    $oeuvreTrouvee = $stmt->fetch();
 
-    // On trace l'erreur dans le journal des erreurs
-    error_log("ERREUR[oeuvre.php] l'identifiant : ".$id." ne correspond à aucune oeuvre référencée en BD");
+    // Si l'ID ne correspond à aucune oeuvre stockée en BD, on déclenche une exception
+    if (!$oeuvreTrouvee) {
+        throw new Exception("l'identifiant : ".$id." ne correspond à aucune oeuvre référencée en BD");
+    }
+
+} catch (\PDOException $e) {
+
+    // On trace l'erreur technique SQL dans le journal des erreurs
+    error_log("ERREUR[oeuvre.php] Erreur SQL ".$e->getMessage());
 
     // On redirige vers la page d'accueil
     header('Location: index.php');
     exit;
 
-}
+} catch (Exception $e) {
+
+    // On trace l'erreur applicative dans le journal des erreurs
+    error_log("ERREUR[oeuvre.php] ".$e->getMessage());
+
+    // On redirige vers la page d'accueil
+    header('Location: index.php');
+    exit;
+} 
+
 ?>
 
 <!-- Affichage des détails de l'oeuvre -->

@@ -36,12 +36,12 @@ function dbconnect(array $configDB) {
         try {
             // On crée l'objet PDO
             $pdo = new PDO($dsn, $config['user'], $config['pass'], $options);
-            // $pdo = new PDO($dsn, $user, $pass, $options);
+            
         } catch (\PDOException $e) {
             error_log("Erreur de connexion : " . $e->getMessage());
             header('Location: errors.php');
             exit;   
-            // die("Une erreur est survenue lors de la connexion à la base de données.");
+            
         }
 
     }    

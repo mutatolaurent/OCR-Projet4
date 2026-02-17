@@ -9,6 +9,7 @@ $donnees = $_SESSION['donnees'] ?? ['titre' => '', 'artiste' => '', 'image' => '
 // On nettoie la session pour que les messages ne restent pas au prochain rafraîchissement
 unset($_SESSION['erreurs'], $_SESSION['donnees']);
 
+// Insertion du header du site
 require 'header.php'; ?>
 
 <form action="traitement.php" method="POST">
