@@ -9,9 +9,6 @@ require_once 'db.php';
 // Inclusion de l'entête de chaque page du site
 include 'header.php';
 
-// Inclusion des données sur les oeuvres a présenter sur le site
-// include 'oeuvres.php';
-
 // connexion à la DB
 // $pdo = dbconnect($user,$pass,$host,$port,$db,$charset);
 $pdo = dbconnect($dbConfig);
@@ -29,7 +26,7 @@ echo "<div id=\"liste-oeuvres\">";
 // . Une image de l'oeuvre
 // . Son titre
 // . Le nom de l'artiste
-// Le tout estdoté d'un lien vers une page détail de l'oeuvre
+// Le tout est doté d'un lien vers une page détail de l'oeuvre
 
 foreach ($oeuvres as $oeuvre) {
   echo "<article class=\"oeuvre\">";
