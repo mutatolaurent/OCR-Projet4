@@ -22,5 +22,9 @@ J'ai réalisé la gestion des erreurs du formulaire de façon à :
 
 - cibler chaque champ en erreur par un feedback qui affiche un message spéfique et change le style des contours du champ.
 - éviter à l'utilisateur de re-saisir tous les champs du formulaire si un des champs est en erreur.
+- utiliser uniquement HTML et CSS sans JS
+- me familiariser avec les variables de sessions
 
-Pour réaliser cette gestion du feedback des erreurs au niveau du formulaire, j'ai utilisé des variables de session.
+J'ai mis en place un switch possible entre un environnement de DEV et un environnement de PROD via l'utilisation d'une variable d'envronnement initialisée dans config.php. Le switch s'applique au serveur de BD.
+
+Enfin, je trace les erreurs SQL et les arreurs applicatives dans le fichier config/php_errors.log
