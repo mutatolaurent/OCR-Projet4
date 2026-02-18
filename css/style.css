@@ -137,8 +137,6 @@ input[type="submit"] {
 
 .erreur-texte {
   color: #d9534f;
-  /* display: block; */
-  /* margin-bottom: 10px; */
 }
 
 .input-erreur {

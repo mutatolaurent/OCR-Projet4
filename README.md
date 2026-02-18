@@ -24,6 +24,8 @@ Application web PHP permettant la gestion d’œuvres stockées en base de donn�
 
 /img => visuels du site (dont le logo)
 
+/js => script Javascript
+
 ## Points techniques développés
 
 ### Exploitation d'une BD MySQL
@@ -40,7 +42,8 @@ Application web PHP permettant la gestion d’œuvres stockées en base de donn�
 
 ### Validation du formulaire
 
-- Validation côté serveur (sans JavaScript)
+- Validation côté front (avec Javascript)
+- Validation côté serveur
 - Messages d’erreur spécifiques par champ
 - Mise en évidence visuelle des champs invalides
 - Conservation des données saisies en cas d’erreur
@@ -56,3 +59,4 @@ Application web PHP permettant la gestion d’œuvres stockées en base de donn�
 - PHP
 - MySQL
 - HTML / CSS
+- Javascript

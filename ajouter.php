@@ -32,7 +32,7 @@ require 'header.php'; ?>
 
     <div class="champ-formulaire">
         <label for="image">URL de l'image</label>
-        <input type="url" name="image" id="image" <?= isset($donnees['image']) ? 'value="'.htmlspecialchars($donnees['image']).'"' : '' ?> <?= isset($erreurs['image']) ? 'class="input-erreur"' : '' ?>>
+        <input type="text" name="image" id="image" <?= isset($donnees['image']) ? 'value="'.htmlspecialchars($donnees['image']).'"' : '' ?> <?= isset($erreurs['image']) ? 'class="input-erreur"' : '' ?>>
         <?php if(isset($erreurs['image'])): ?>
                 <span class="erreur-texte"><?= $erreurs['image'] ?></span>
         <?php endif; ?>
@@ -48,5 +48,7 @@ require 'header.php'; ?>
 
     <input type="submit" value="Valider" name="submit">
 </form>
+
+<script src="./js/formValidate.js"></script>
 
 <?php require 'footer.php'; ?>
