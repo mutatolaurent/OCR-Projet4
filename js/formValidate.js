@@ -95,41 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    /*
-    // 3) Image : non vide + URL valide + extension image
-    const imageValue = image.value.trim();
-
-    if (imageValue === "") {
-      showError(image, "L'URL de l'image ne peut pas être vide.");
-    } else {
-      // regex qui vérifie que l'URL de l'image :
-      // - ^https?:\/\/ => commence par http:// ou https://
-      // - ([a-zA-Z0-9-]+\.)+
-      //   [a-zA-Z0-9-]+ => un groupe de caractères valides pour un nom de domaine
-      //   \. => suivi d'un point
-      //   + => répété au moins une fois
-      // - [a-zA-Z]{2,} => C’est l’extension du domaine avec au moins 2 caractères
-      // - (\/.*)? => OPtionnel : un / suivi de n'importe quoi, c'est le ? qui rend tout çà optionnel
-      // - \.(jpg|jpeg|png|gif|webp) => contient un point suivi de jpg, jpeg, png, gif ou webp
-      // - $ => ne contient rien après cette extension (sous entendu pas de query string)
-      // - i => insensitive = insensible à la casse (JPG = jpg)”
-      // const imageRegex = /^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i;
-      const imageRegex =
-        /^https?:\/\/([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/.*)?\.(jpg|jpeg|png|gif|webp)$/i;
-
-      try {
-        // new URL(imageValue); // Vérifie la structure générale
-        if (!imageRegex.test(imageValue)) {
-          showError(
-            image,
-            "L'URL doit pointer vers une image (.jpg, .png, .gif, .webp).",
-          );
-        }
-      } catch {
-        showError(image, "L'URL n'est pas valide.");
-      }
-    }
-*/
     // 4) Description : non vide + longueur >= 3
     if (description.value.trim().length < 3) {
       showError(
